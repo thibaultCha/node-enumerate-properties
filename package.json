@@ -1,0 +1,30 @@
+{
+  "name": "Object-properties",
+  "author": "thibaultCha",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "make test",
+    "blanket": {
+      "pattern": "lib",
+      "data-cover-never": "node_modules"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "blanket": "*",
+    "coveralls": "~2.3.0",
+    "mocha-lcov-reporter": "*"
+  },
+  "engines": {
+    "node": "0.10.21"
+  }
+}
