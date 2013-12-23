@@ -1,30 +1,29 @@
 {
-  "name": "Object-properties",
-  "author": "thibaultCha",
+  "name": "enumerate-properties",
+  "author": "Thibault Charbonnier <thibaultcha@me.com>",
   "version": "0.0.1",
-  "description": "",
-  "private": true,
+  "description": "Enumerates, get and set JavaScript objects properties in a dot notation format",
+  "keywords": [
+    "enumerate",
+    "properties",
+    "dot",
+    "dot notation",
+    "object"
+  ],
+  "license": "MIT",
+  "main": "./lib/enumerate-properties.js",
   "scripts": {
-    "test": "make test",
-    "blanket": {
-      "pattern": "lib",
-      "data-cover-never": "node_modules"
-    }
+    "test": "make test"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/thibaultCha/node-enumerate-properties.git"
   },
   "dependencies": {
-
+    "coffee-script": "1.6.x"
   },
   "devDependencies": {
-    "mocha": "*",
-    "blanket": "*",
-    "coveralls": "~2.3.0",
-    "mocha-lcov-reporter": "*"
-  },
-  "engines": {
-    "node": "0.10.21"
+    "mocha": "1.1.x",
+    "should": "2.1.x"
   }
 }
