@@ -26,12 +26,13 @@ obj =
 }
 
 // Enumerate
-properties.enumerate(obj, function (prop) {
-  //0 foo
-  //1 bar
-  //2 nested.foo
-  //3 nested.bar
-  //4 foobar
+properties.enumerate(obj, function (key, value) {
+  //i key         value
+  //0 foo         'bar'
+  //1 bar         'foo'
+  //2 nested.foo  'bar'
+  //3 nested.bar  'foo'
+  //4 foobar      'barfoo'
 })
 
 // Get	
