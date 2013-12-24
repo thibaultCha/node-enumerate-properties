@@ -1,8 +1,6 @@
 should     = require 'should'
 properties = require '../lib/enumerate-properties'
 
-#search = require 'recursive-search'
-
 describe 'enumerate-properties.js', ->
 
 	testObject =
@@ -18,17 +16,23 @@ describe 'enumerate-properties.js', ->
 				bar: 'foo'
 
 	describe 'enumerate()', ->
-		it 'should enumerate all properties of an propertiesect', ->
+		it 'should enumerate all properties and values of an object', ->
 			props = []
-			properties.enumerate testObject, (prop) ->
-				props.push prop
+			properties.enumerate testObject, (key, value) ->
+				props.push
+					key: key
+					val: value
 
-			props[0].should.equal 'foo'
-			props[1].should.equal 'bar'
-			props[2].should.equal 'nested.foo'
-			props[3].should.equal 'nested.bar'
-			props[4].should.equal 'foobar'
-			props[6].should.equal 'verynested.nested.bar'
+			props[0].key.should.equal 'foo'
+			props[0].val.should.equal 'bar'
+			props[1].key.should.equal 'bar'
+			props[1].val.should.equal 'foo'
+			props[2].key.should.equal 'nested.foo'
+			props[3].key.should.equal 'nested.bar'
+			props[3].val.should.equal 'foo'
+			props[4].key.should.equal 'foobar'
+			props[6].key.should.equal 'verynested.nested.bar'
+			props[6].val.should.equal 'foo'
 
 	describe 'getAtPath()', ->
 		it 'should get a property at given path', ->
@@ -44,7 +48,7 @@ describe 'enumerate-properties.js', ->
 			result = properties.getAtPath testObject, 'verynested.nested.bar'
 			result.should.equal 'foo'
 
-		it 'should return null if no propertiesect is passed', ->
+		it 'should return null if no object is passed', ->
 			result = properties.getAtPath null, ''
 			(result is null).should.be.true
 
@@ -63,6 +67,6 @@ describe 'enumerate-properties.js', ->
 			properties.setAtPath testObject, 'nested.foo', 'newvalue'
 			testObject.nested.foo.should.equal 'newvalue'
 
-		it 'should create the property art given path if it doesn\'t already exists', ->
+		it 'should create the property if given path doesn\'t already exists', ->
 			properties.setAtPath testObject, 'newpath.newprop', 'newval'
 			testObject.newpath.newprop.should.equal 'newval'

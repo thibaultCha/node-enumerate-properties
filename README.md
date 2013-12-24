@@ -42,7 +42,11 @@ properties.setAtPath(obj, 'nested.foo', 'newvalue') // obj.nested.foo === 'newva
 properties.setAtPath(obj, 'newpath.nested', 'newvalue') // obj.newpath.nested is created
 ```
 
-## Licence
+### Who use it
+
+- **[Equiprose](http://www.equiprose.org)**
+
+### Licence
 
 Copyright (C) 2013 by Thibault Charbonnier.
 

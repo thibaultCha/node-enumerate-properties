@@ -1,5 +1,4 @@
 module.exports =
-
 	enumerate: (object, callback) ->
 		walk = ((obj, stack) ->
 				stack = stack || ''
@@ -10,7 +9,7 @@ module.exports =
 						if stack
 							str = stack.substring(1) + '.'
 						str += prop
-						callback str
+						callback str, val
 				return false
 			)
 		walk(object)
