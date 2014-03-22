@@ -15,14 +15,14 @@ $ npm install enumerate-properties
 ```javascript
 var properties = require('enumerate-properties')
 
-obj = 
-{ foo: 'bar'
-, bar: 'foo'
-, nested:
-  { foo: 'bar'
-  , bar: 'foo'
-  }
-, foobar: 'barfoo'
+obj = { 
+  foo: 'bar',
+  bar: 'foo',
+    nested: {
+      foo: 'bar',
+      bar: 'foo'
+    },
+  foobar: 'barfoo'
 }
 
 // Enumerate
