@@ -6,7 +6,7 @@ module.exports =
    * each as a dot notation format
    *
    * @param {Object} object The object on which to iterate
-   * @param {Function} callback Callback function for each property
+   * @param {Function} callback Callback function called for each property
   ###
   enumerate: (object, callback) ->
     walk = ((obj, stack) ->

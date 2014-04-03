@@ -10,7 +10,10 @@ Enumerates, get and set JavaScript objects properties in a dot notation format
 $ npm install enumerate-properties
 ```
 
-### Usage
+### Documentation
+See [documentation.md](documentation.md)
+
+### Example
 
 ```javascript
 var properties = require('enumerate-properties')

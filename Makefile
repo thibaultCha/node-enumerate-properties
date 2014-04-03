@@ -1,10 +1,14 @@
 REPORTER = spec
+BIN = ./node_modules/.bin
 
 build:
-	@./node_modules/.bin/coffee -b -o lib src/*.coffee
+	$(BIN)/coffee -b -o lib src/*.coffee
 
 test: build
-		@NODE_ENV=test ./node_modules/.bin/mocha --compilers coffee:coffee-script \
-			--reporter $(REPORTER)
+	@NODE_ENV=test ./node_modules/.bin/mocha --compilers coffee:coffee-script \
+        --reporter $(REPORTER)
 
-.PHONY: test
+doc:
+	$(BIN)/markdox src/enumerate-properties.coffee -o documentation.md
+
+.PHONY: build test doc
