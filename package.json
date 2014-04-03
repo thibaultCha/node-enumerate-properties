@@ -20,10 +20,10 @@
     "url": "https://github.com/thibaultCha/node-enumerate-properties.git"
   },
   "dependencies": {
-    "coffee-script": "1.6.x"
+    "coffee-script": "1.7.x"
   },
   "devDependencies": {
-    "mocha": "1.1.x",
-    "should": "2.1.x"
+    "mocha": "1.18.x",
+    "should": "3.2.x"
   }
 }
