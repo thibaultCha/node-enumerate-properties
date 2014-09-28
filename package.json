@@ -1,7 +1,7 @@
 {
   "name": "enumerate-properties",
   "author": "Thibault Charbonnier <thibaultcha@me.com>",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Enumerates, get and set objects properties in a dot notation format",
   "keywords": [
     "enumerate",
