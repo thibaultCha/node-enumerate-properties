@@ -13,7 +13,7 @@ module.exports =
       stack = stack || ''
       return true if typeof obj isnt 'object'
       for prop,val of obj
-        if walk val, stack + '.' + prop
+        if walk val, "#{stack}.#{prop}"
           str = ''
           if stack
             str = stack.substring(1) + '.'
@@ -34,12 +34,11 @@ module.exports =
    * @return {* | null}
   ###
   getAtPath: (object, path) ->
-    return null if path is null
+    return null if not path? or not object?
     props = path.split '.'
     for i in props
-      return null if !object or typeof object isnt 'object'
+      return null if not object[i]?
       object = object[i]
-    return null if object is undefined
     object
 
   ###
@@ -56,7 +55,7 @@ module.exports =
     parts = path.split '.'
     len   = parts.length - 1
     for i in [0...len]
-      if !object[parts[i]]
+      if not object[parts[i]]?
         object[parts[i]] = {}
       object = object[parts[i]]
     object[parts[len]] = value

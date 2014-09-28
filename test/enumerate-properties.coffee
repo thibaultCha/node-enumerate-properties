@@ -59,6 +59,9 @@ describe 'enumerate-properties.js', ->
       result = properties.getAtPath testObject, 'inexistant,invalid'
       (result is null).should.be.true
 
+      result = properties.getAtPath testObject, 'verynested.nested.bar.toonested.reallytoonested'
+      (result is null).should.be.true
+
       result = properties.getAtPath testObject, null
       (result is null).should.be.true
 
