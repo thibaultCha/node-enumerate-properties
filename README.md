@@ -18,7 +18,7 @@ See [documentation.md](documentation.md)
 ```javascript
 var properties = require('enumerate-properties')
 
-obj = { 
+obj = {
   foo: 'bar',
   bar: 'foo',
     nested: {
@@ -38,7 +38,7 @@ properties.enumerate(obj, function (key, value) {
   //4 foobar      'barfoo'
 })
 
-// Get	
+// Get
 var prop = properties.getAtPath(obj, 'nested.foo') // return 'bar'
 
 // Set
@@ -46,11 +46,11 @@ properties.setAtPath(obj, 'nested.foo', 'newvalue') // obj.nested.foo === 'newva
 properties.setAtPath(obj, 'newpath.nested', 'newvalue') // obj.newpath.nested is created
 ```
 
-### Who use it
+### Who uses it
 
 - **[Equiprose](http://www.equiprose.org)**
 
-### Licence
+### License
 
 Copyright (C) 2013 by Thibault Charbonnier.
 
