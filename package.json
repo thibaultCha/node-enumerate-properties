@@ -14,6 +14,7 @@
   "main": "./lib/enumerate-properties.js",
   "scripts": {
     "build": "coffee -b -o lib src/*.coffee",
+    "pretest": "npm run build",
     "test": "mocha --compilers coffee:coffee-script/register --reporter spec",
     "doc": "markdox src/enumerate-properties.coffee -o documentation.md"
   },
